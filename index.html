@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diamond Construction Solutions LLC</title>
+  <meta name="description" content="Luxury construction and renovation services with elegant finishes, honest service, and refined craftsmanship." />
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: #0f0f0f;
+      --panel-2: #151515;
+      --gold: #d4af37;
+      --gold-soft: rgba(212, 175, 55, 0.14);
+      --text: #f7f7f7;
+      --muted: #b5b5b5;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: radial-gradient(circle at top right, rgba(212,175,55,0.12), transparent 22%),
+                  radial-gradient(circle at bottom left, rgba(212,175,55,0.08), transparent 28%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
+    .section { padding: 84px 0; }
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 12px;
+      margin-bottom: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .muted { color: var(--muted); font-family: Arial, Helvetica, sans-serif; }
+    .grid { display: grid; gap: 24px; }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(5,5,5,0.92);
+      border-bottom: 1px solid rgba(212,175,55,0.12);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 84px;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid rgba(212,175,55,0.25);
+    }
+    .brand-title {
+      font-size: 1.2rem;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .brand-sub {
+      color: var(--muted);
+      font-size: .92rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+      padding: 0;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #ddd;
+      font-size: .95rem;
+    }
+    nav a:hover { color: var(--gold); }
+
+    .hero {
+      padding: 72px 0 48px;
+    }
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .hero-copy h1 {
+      font-size: clamp(2.6rem, 5vw, 5rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+    }
+    .hero-copy p {
+      max-width: 780px;
+      font-size: 1.08rem;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .pill {
+      display: inline-block;
+      border: 1px solid rgba(212,175,55,0.22);
+      background: var(--gold-soft);
+      color: var(--gold);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: .84rem;
+      margin-bottom: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      transition: .2s ease;
+      border: 1px solid transparent;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #111;
+    }
+    .btn-primary:hover { transform: translateY(-1px); }
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.14);
+      color: white;
+      background: transparent;
+    }
+    .btn-secondary:hover { border-color: rgba(212,175,55,0.45); color: var(--gold); }
+    .hero-side {
+      display: grid;
+      gap: 18px;
+    }
+    .info-box { padding: 26px; }
+    .info-box h3 { margin: 10px 0 10px; font-size: 1.35rem; }
+    .info-box p { margin: 0; color: var(--muted); font-family: Arial, Helvetica, sans-serif; }
+    .gold-box {
+      background: linear-gradient(180deg, rgba(212,175,55,0.18), rgba(212,175,55,0.04));
+      border: 1px solid rgba(212,175,55,0.2);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .content-card { padding: 34px; }
+    .content-card h2 { margin: 0 0 14px; font-size: 2.25rem; }
+    .content-card p, .content-card li {
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+    }
+    .content-card ul { margin: 16px 0 0; padding-left: 18px; }
+
+    .services-grid, .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+    .service-card, .review-card { padding: 28px; }
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: rgba(212,175,55,0.14);
+      margin-bottom: 16px;
+    }
+    .service-card h3, .review-card h3 { margin: 0 0 10px; font-size: 1.2rem; }
+    .service-card p, .review-card p { color: var(--muted); font-family: Arial, Helvetica, sans-serif; }
+    .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 10px; }
+
+    .forms-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .form-card { padding: 30px; }
+    form { display: grid; gap: 14px; }
+    .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: #0a0a0a;
+      color: white;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: .98rem;
+      font-family: Arial, Helvetica, sans-serif;
+      outline: none;
+    }
+    textarea { resize: vertical; min-height: 140px; }
+    input::placeholder, textarea::placeholder { color: #7f7f7f; }
+    button {
+      cursor: pointer;
+      border: none;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 28px 0 40px;
+    }
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: .95rem;
+    }
+
+    @media (max-width: 980px) {
+      nav ul { display: none; }
+      .hero-wrap, .two-col, .forms-wrap, .services-grid, .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid-2 { grid-template-columns: 1fr; }
+      .footer-wrap { flex-direction: column; align-items: flex-start; }
+      .section { padding: 64px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="logo.png" alt="Diamond Construction Solutions LLC logo" />
+        <div>
+          <div class="brand-title">Diamond Construction Solutions LLC</div>
+          <div class="brand-sub">Luxury craftsmanship. Refined spaces. Built to last.</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#estimate">Estimates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-wrap">
+        <div class="hero-copy">
+          <div class="pill">Premium Construction & Renovation</div>
+          <h1>Elegant construction solutions with luxury finishes and dependable service.</h1>
+          <p>
+            At Diamond Construction Solutions LLC, we bring vision, precision, and elevated craftsmanship to every project. From refined home improvements to custom renovation work, we create spaces that feel sophisticated, functional, and built with intention.
+          </p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#estimate">Request an Estimate</a>
+            <a class="btn btn-secondary" href="#contact">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="card info-box">
+            <div class="eyebrow">Our Standard</div>
+            <h3>Luxury and detail</h3>
+            <p>Every detail matters. We focus on clean execution, quality materials, and a polished final result.</p>
+          </div>
+          <div class="card info-box">
+            <div class="eyebrow">Our Promise</div>
+            <h3>Honest communication</h3>
+            <p>We guide every client with clarity, professionalism, and respect from consultation to completion.</p>
+          </div>
+          <div class="card info-box gold-box">
+            <div class="eyebrow">Direct Contact</div>
+            <p>📧 diamond@constructionsllc.net</p>
+            <p>📞 615-612-8480</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container two-col">
+        <div class="card content-card">
+          <div class="eyebrow">About Us</div>
+          <h2>Our story and purpose</h2>
+          <p>
+            Diamond Construction Solutions LLC was founded with a clear purpose: to deliver high-quality construction and renovation services with a luxury feel, a strong work ethic, and results our clients can be proud of. We believe every project is more than a job. It is an investment in comfort, beauty, and long-term value.
+          </p>
+          <p>
+            Our mission is to transform homes and properties through skilled workmanship, elevated finishes, and reliable service. We are committed to creating spaces that reflect each client’s vision while maintaining the standards of excellence, care, and integrity that define our brand.
+          </p>
+        </div>
+        <div class="grid">
+          <div class="card content-card gold-box">
+            <h2>What sets us apart</h2>
+            <ul>
+              <li>Luxury-minded finishes and clean presentation</li>
+              <li>Personalized service tailored to each project</li>
+              <li>Strong attention to detail and quality control</li>
+              <li>Professional communication and dependable care</li>
+            </ul>
+          </div>
+          <div class="card content-card">
+            <h2>Our vision</h2>
+            <p>
+              We aim to become a trusted name in elegant construction solutions by combining craftsmanship, refinement, and service that feels as premium as the spaces we help create.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="eyebrow">Services</div>
+        <h2 style="font-size:2.4rem; margin-top:0;">Construction and renovation services designed with sophistication in mind</h2>
+        <p class="muted" style="max-width:760px; margin-bottom:26px;">
+          This layout is already written in a polished and professional style and can be adjusted later to match your exact services.
+        </p>
+        <div class="services-grid">
+          <div class="card service-card">
+            <div class="icon-box"></div>
+            <h3>Home Renovations</h3>
+            <p>Beautifully executed upgrades designed to improve style, comfort, and value.</p>
+          </div>
+          <div class="card service-card">
+            <div class="icon-box"></div>
+            <h3>Interior Improvements</h3>
+            <p>Thoughtful updates that enhance the feel and functionality of every space.</p>
+          </div>
+          <div class="card service-card">
+            <div class="icon-box"></div>
+            <h3>Repairs & Finishing Work</h3>
+            <p>Reliable repair solutions with clean workmanship and careful attention to detail.</p>
+          </div>
+          <div class="card service-card">
+            <div class="icon-box"></div>
+            <h3>Custom Project Estimates</h3>
+            <p>Professional consultations and tailored proposals based on your property needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="eyebrow">Client Reviews</div>
+        <h2 style="font-size:2.4rem; margin-top:0;">Experiences our clients are proud to share</h2>
+        <p class="muted" style="max-width:760px; margin-bottom:26px;">
+          This section gives you a luxurious review area and also a form where clients can submit their experience.
+        </p>
+        <div class="reviews-grid">
+          <div class="card review-card">
+            <div class="stars">★★★★★</div>
+            <p>“The team was professional, detail-oriented, and delivered a beautiful result that exceeded expectations.”</p>
+          </div>
+          <div class="card review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Excellent communication, high-quality work, and a very polished final finish. Highly recommended.”</p>
+          </div>
+          <div class="card review-card">
+            <div class="stars">★★★★★</div>
+            <p>“They brought our vision to life with care, precision, and an impressive level of craftsmanship.”</p>
+          </div>
+          <div class="card review-card">
+            <div class="stars">★★★★★</div>
+            <p>“Reliable, respectful, and committed to quality. We would absolutely work with them again.”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="estimate">
+      <div class="container forms-wrap">
+        <div class="card form-card">
+          <div class="eyebrow">Request an Estimate</div>
+          <h2 style="font-size:2.25rem; margin-top:0;">Tell us about your project</h2>
+          <p class="muted">
+            Share the type of work you need, the location, the size of the property, and whether repairs are needed. The more information you provide, the better we can prepare your estimate.
+          </p>
+          <p class="muted" style="margin-top:24px;">📧 diamond@constructionsllc.net</p>
+          <p class="muted">📞 615-612-8480</p>
+        </div>
+
+        <div class="card form-card">
+          <form action="https://formspree.io/f/yourformid" method="POST">
+            <div class="form-grid-2">
+              <input type="text" name="full_name" placeholder="Full name" required />
+              <input type="text" name="phone_number" placeholder="Phone number" required />
+            </div>
+            <input type="email" name="email" placeholder="Email address" required />
+            <div class="form-grid-2">
+              <input type="text" name="project_location" placeholder="Project location" required />
+              <input type="text" name="house_size" placeholder="House size / square footage" />
+            </div>
+            <div class="form-grid-2">
+              <select name="work_type" required>
+                <option value="">Type of work needed</option>
+                <option>Renovation</option>
+                <option>Interior improvements</option>
+                <option>Repairs</option>
+                <option>Finishing work</option>
+                <option>Custom project</option>
+              </select>
+              <select name="repairs_needed" required>
+                <option value="">Are repairs needed?</option>
+                <option>Yes</option>
+                <option>No</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+            <input type="text" name="timeline" placeholder="Desired timeline" />
+            <textarea name="project_details" placeholder="Describe the work you want done, your goals for the space, and any important details about the property" required></textarea>
+            <button class="btn btn-primary" type="submit">Submit Estimate Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container forms-wrap">
+        <div class="card form-card">
+          <div class="eyebrow">Contact</div>
+          <h2 style="font-size:2.25rem; margin-top:0;">Questions, consultations, and project inquiries</h2>
+          <p class="muted">
+            Whether you are planning a renovation, exploring an improvement project, or simply looking for more information, we would be pleased to hear from you.
+          </p>
+          <p class="muted" style="margin-top:24px;">📧 diamond@constructionsllc.net</p>
+          <p class="muted">📞 615-612-8480</p>
+        </div>
+
+        <div class="card form-card">
+          <form action="https://formspree.io/f/yourformid" method="POST">
+            <div class="form-grid-2">
+              <input type="text" name="full_name" placeholder="Full name" required />
+              <input type="text" name="phone_number" placeholder="Phone number" />
+            </div>
+            <input type="email" name="email" placeholder="Email address" required />
+            <input type="text" name="subject" placeholder="Subject" required />
+            <textarea name="message" placeholder="Tell us how we can help" required></textarea>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div class="brand">
+        <img src="logo.png" alt="Diamond Construction Solutions LLC logo" />
+        <div>
+          <div class="brand-title">Diamond Construction Solutions LLC</div>
+          <div class="brand-sub">Luxury craftsmanship with purpose and precision.</div>
+        </div>
+      </div>
+      <div>© 2026 Diamond Construction Solutions LLC. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
